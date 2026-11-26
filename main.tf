@@ -45,7 +45,7 @@ resource "aws_vpc_security_group_egress_rule" "alb_to_web" {
 
 resource "aws_vpc_security_group_ingress_rule" "web_from_alb" {
   security_group_id            = aws_security_group.web.id
-  description                  = "HTTP depuis le SG de l'ALB uniquement"
+  description                  = "HTTP depuis le SG ALB uniquement"
   referenced_security_group_id = aws_security_group.alb.id
   from_port                    = 80
   to_port                      = 80
